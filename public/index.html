@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Library App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Open Library</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-section="home">Home</a></li>
+                    <li><a href="#" data-section="search">Search</a></li>
+                    <li><a href="#" data-section="recommendations">Recommendations</a></li>
+                    <li><a href="#" data-section="study-planner">Study Planner</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home-section" class="active-section">
+            <div class="hero">
+                <h2>Discover Your Next Favorite Book</h2>
+                <p>Access thousands of free books, authors information, and reading recommendations.</p>
+                <button id="explore-btn">Explore Now</button>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Book Search</h3>
+                    <p>Find any book with our comprehensive search</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Recommendations</h3>
+                    <p>Get personalized book recommendations</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Study Planner</h3>
+                    <p>Plan your reading schedule</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search-section">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for books, authors...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="filters">
+                <select id="sort-by">
+                    <option value="relevance">Relevance</option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                </select>
+                <select id="results-per-page">
+                    <option value="10">10 per page</option>
+                    <option value="20">20 per page</option>
+                    <option value="50">50 per page</option>
+                </select>
+            </div>
+            
+            <div id="search-results" class="books-grid"></div>
+            <div class="pagination">
+                <button id="prev-page" disabled><i class="fas fa-chevron-left"></i></button>
+                <span id="current-page">1</span>
+                <button id="next-page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations-section">
+            <h2>Book Recommendations</h2>
+            <div class="recommendation-filters">
+                <button class="genre-btn" data-genre="fiction">Fiction</button>
+                <button class="genre-btn" data-genre="science">Science</button>
+                <button class="genre-btn" data-genre="history">History</button>
+                <button class="genre-btn" data-genre="biography">Biography</button>
+            </div>
+            <div id="recommendations-results" class="books-grid"></div>
+        </section>
+
+        <!-- Study Planner Section -->
+        <section id="study-planner-section">
+            <h2>Study Planner</h2>
+            <div class="planner-container">
+                <div class="planner-form">
+                    <h3>Add a Book to Your Plan</h3>
+                    <input type="text" id="planner-search" placeholder="Search books to add...">
+                    <div id="planner-search-results" class="mini-results"></div>
+                    
+                    <div id="selected-book" class="hidden">
+                        <h4>Selected Book</h4>
+                        <div class="selected-book-info"></div>
+                        <div class="reading-plan">
+                            <label for="pages-per-day">Pages per day:</label>
+                            <input type="number" id="pages-per-day" min="1" value="10">
+                            <button id="add-to-plan">Add to Plan</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reading-schedule">
+                    <h3>Your Reading Schedule</h3>
+                    <div id="planned-books"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Details Modal -->
+        <div id="book-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modal-book-details"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Open Library App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
