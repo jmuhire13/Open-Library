@@ -1,4 +1,2 @@
-# Environment variables
-.env
-.env.*
-!.env.example
+# hide api key and port
+.env 
