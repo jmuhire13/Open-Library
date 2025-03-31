@@ -1,6 +1,6 @@
 # Open Library Overview
 
-The Open Library is a web application that allows users to browse, search, and manage a digital collection of books. Built with \*\*Node.js \*\*for the backend and html, css and Javascript for frontend. it provides a seamless experience for book enthusiasts.
+The Open Library is a web application that allows users to browse, search, and manage a digital collection of books. Built with Node.js for the backend and html, css and Javascript for frontend. it provides a seamless experience for book enthusiasts.
 
 ## Features
 
@@ -14,7 +14,7 @@ The Open Library is a web application that allows users to browse, search, and m
 
 ### Backend:
 
-- \*\*Node.js \*\* – Server & API
+- Node.js – Server & API
 
 ### Deployment:
 
